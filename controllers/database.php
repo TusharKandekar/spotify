@@ -1,0 +1,66 @@
+<?php
+
+class Database
+{
+    private $host = "localhost";
+    private $dbname = "dpboss";
+    private $username = "root";
+    private $password = "";
+
+    // private $host = "localhost"; 
+    
+    // private $dbname = "dpboss";
+    // private $username = "root";
+    // private $password = "";
+
+    private $charset = "utf8mb4";
+    private $pdo;
+    private $base_url = "https://dpboss.test";
+
+    private $siteName = "dpboss";
+    // private $software = "https://software.teamrudra.com/";
+    // private $softwareid = "4";
+    // private $fast2sms_api = "wzVHgpkoYJa6PFCqDevZMGu83l4LhOAtm9NQxXRdK7f0inSTEBkM6hS0CsJvGBHYZWgq4aRQ19cUxuri";
+    // private $fast2sms_api_rudratech = "Y2mCHcBsfTPSnLQMx5Gwa40zE3NW6Xg9oFt18bKrZduvjiUJkDS8qzkslUI2AmRhj57aPt1MVb4OryCB";
+
+    private $firebaseKey = "15NOPvhWR5E_zst4r_hoD1VIhW82tRt-qMTyIe4-OW8";
+
+    public function __construct()
+    {
+
+        $dsn = "mysql:host={$this->host};dbname={$this->dbname};charset={$this->charset}";
+        $options = [
+            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES   => false,
+        ];
+        try {
+            $this->pdo = new PDO($dsn, $this->username, $this->password, $options);
+        } catch (PDOException $e) {
+            throw new PDOException($e->getMessage(), (int)$e->getCode());
+        }
+    }
+
+    public function getConnection()
+    {
+        if ($this->pdo instanceof PDO) {
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $this->pdo;
+        } else {
+            throw new Exception("Connection not established.");
+        }
+    }
+    public function getUrl()
+    {
+        return  $this->base_url;
+    }
+                                                                                                                                           
+    public function getSiteName()
+                                                                                                                                                 {
+        return  $this->siteName;
+    }
+     public function getFirebaseKey()
+    {
+        return $this->firebaseKey;
+    }
+   }
