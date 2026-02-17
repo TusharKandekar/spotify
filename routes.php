@@ -11,6 +11,11 @@ $route->group(['', 'LoginController'], function ($route) {
 
 $route->group(['', 'WebController'], function ($route) {
     $route->route('', 'index');
+    $route->route('artist', 'Artist');
+        $route->route('album', 'Album');
+
+
+
    
     // $route->route('/', 'index');
 });

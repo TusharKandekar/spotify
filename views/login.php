@@ -17,6 +17,8 @@ background: linear-gradient(87deg, #000000 25%, #3f0200 75%);">
         <div class="absolute inset-0 bg-black bg-opacity-10"></div>
 
         <!-- Login Card -->
+         <!-- <div class=""></div> -->
+          <div class=""></div>
         <div
             class="relative z-10 w-full max-w-md bg-white/10 backdrop-blur-lg rounded-lg shadow-lg border border-white/30 overflow-hidden">
 

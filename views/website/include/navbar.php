@@ -1,5 +1,5 @@
 
-<header class="w-full flex items-center justify-center ">
+<header class="w-full flex items-center justify-center h-[11vh]">
     <div class="w-full bg-black flex py-[9px] justify-between items-center">
        <div class=" flex gap-7 items-center  px-7">
         <div>

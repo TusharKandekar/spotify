@@ -13,11 +13,12 @@ class WebController extends LoginController
         }
         parent::__construct($this->db);
     }
-        public function Privacy(){
+    public function Privacy()
+    {
 
-         $siteName = getDBObject()->getSiteName();
+        $siteName = getDBObject()->getSiteName();
         $pageTitle = "Privacy Policy";
-         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             require 'views/website/privacy-policy.php';
         }
     }
@@ -66,7 +67,7 @@ class WebController extends LoginController
             }
         }
     }
-        public function saveToken()
+    public function saveToken()
     {
         $response = [
             "success" => false,
@@ -190,29 +191,43 @@ class WebController extends LoginController
     public function index()
     {
 
-        $siteName = getDBObject()->getSiteName();
-        $pageModule = "Home Page";
-        $pageTitle = "Home Page";
-        $markets = getData2("SELECT * FROM market WHERE status = '1' ORDER BY position ASC");
-        $starlines = getData("starline");
-
         // printWithPre($starlines);
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-            $golden = getData2("SELECT * FROM goldenank ORDER BY id DESC")[0];
 
             require 'views/website/index.php';
         } elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            if (isset($_POST['popup'])) {
-                $_SESSION['popup'] = $_POST['popup'];
-                // echo "nice";
-            }
-            // printWithPre($_SESSION);
-            // if (!isset($_SESSION['userid']) && $_SESSION['type'] != "User") {
-            //     if (!isset($_SESSION['popup'])) {
-            //         $_SESSION['popup'] = 'false';
-            //     }
-            // }
+
             require 'views/website/index.php';
+        }
+    }
+    public function Artist()
+    {
+        $color = getDominantColor($_SERVER['DOCUMENT_ROOT'] . '/public/artist-banner/artist-banner.jpg');
+
+        // echo $color; 
+        $siteName = getDBObject()->getSiteName();
+        // printWithPre($starlines);
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+            require 'views/website/artist.php';
+        } elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            require 'views/website/artist.php';
+        }
+    }
+    public function Album()
+    {
+        $color = getDominantColor($_SERVER['DOCUMENT_ROOT'] . '/public/album-banner/asiq.jpg');
+
+        // echo $color; 
+        $siteName = getDBObject()->getSiteName();
+        // printWithPre($starlines);
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+            require 'views/website/album.php';
+        } elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            require 'views/website/album.php';
         }
     }
 

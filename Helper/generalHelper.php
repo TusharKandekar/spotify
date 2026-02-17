@@ -24,11 +24,7 @@ function getBaseUrl()
     return getDBObject()->getUrl();
 }
 
-function getFast2SMS()
-{
 
-    return getDBObject()->getfast2sms_API();
-}
 function getUserByUsername($db, $username)
 {
     try {
@@ -64,6 +60,7 @@ function getDisplayPopup($db)
         return [];
     }
 }
+
 function getUserByphone($db, $mobile, $email = null)
 {
     try {
@@ -127,23 +124,61 @@ function registerOnlineUser($db, array $data)
         return false;
     }
 }
-function getExpiry()
+
+function getDominantColor(string $imagePath): ?string
 {
-    $software = getDBObject()->getSoftware();
-    $softwareid = getDBObject()->getSoftwareId();
-    $url = $software . "project/is-valid/$softwareid";
-    // echo $url;
-    $response = file_get_contents($url);
-    // echo $response;
-    $notice = "";
-    if ($response === FALSE) {
-    } else {
-        $response = json_decode($response);
-        if ($response->success) {
-            $notice = $response->notice;
+    if (!file_exists($imagePath)) {
+        return null;
+    }
+
+    $info = getimagesize($imagePath);
+    if (!$info) {
+        return null;
+    }
+
+    switch ($info['mime']) {
+        case 'image/jpeg':
+            $img = imagecreatefromjpeg($imagePath);
+            break;
+        case 'image/png':
+            $img = imagecreatefrompng($imagePath);
+            break;
+        case 'image/webp':
+            $img = imagecreatefromwebp($imagePath);
+            break;
+        default:
+            return null;
+    }
+
+    $width  = imagesx($img);
+    $height = imagesy($img);
+
+    $r = $g = $b = $count = 0;
+
+    // 🔥 Sample every 10px for performance
+    for ($x = 0; $x < $width; $x += 10) {
+        for ($y = 0; $y < $height; $y += 10) {
+            $rgb = imagecolorat($img, $x, $y);
+
+            $r += ($rgb >> 16) & 0xFF;
+            $g += ($rgb >> 8) & 0xFF;
+            $b += $rgb & 0xFF;
+
+            $count++;
         }
     }
-    return $notice;
+
+    imagedestroy($img);
+
+    if ($count === 0) {
+        return null;
+    }
+
+    return sprintf("#%02X%02X%02X",
+        intval($r / $count),
+        intval($g / $count),
+        intval($b / $count)
+    );
 }
 
 function printWithPre($data)
