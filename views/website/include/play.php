@@ -1,11 +1,11 @@
-<div class="h-[13vh] px-5 bg-black flex items-center justify-center fixed bottom-0 left-0 w-full z-50">
+<div class="h-[13vh] px-5 bg-black flex items-center justify-center fixed bottom-0 left-0 w-full transition-transform duration-700 ease-in-out z-50" id="playbar">
     <div class="w-full flex items-center justify-start">
         <div class="w-[10vh] h-[10vh] rounded-lg overflow-hidden">
-            <img class="w-full h-full object-cover" src="https://i1.sndcdn.com/artworks-RfM7eeoKiLcx-0-t500x500.jpg" alt="">
+            <img class="w-full h-full object-cover" src="/public/song-banner/Gul - Anuv Jain.jpg" alt="">
         </div>
         <div class="flex flex-col ml-4">
-            <h2 class="text-white font-bold">Am I Dreaming</h2>
-            <p class="text-gray-400 text-xs">Metro Boomin, A$AP Rocky</p>
+            <h2 class="text-white font-bold">Gul</h2>
+            <p class="text-gray-400 text-xs">Anuv Jain</p>
         </div>
     </div>
     <div class="w-full flex items-center justify-center flex-col gap-2">
@@ -44,8 +44,8 @@
                 <div class="bg-white w-[27%] h-full rounded-full top-0 left-0"></div>
             </div>
         </div>
-         <div class="w-[3vh] h-[3vh] flex items-center justiy-center cursor pointer">
-                <img class="opacity-[50%]" src="/public/icons/full-screen.png" alt="">
+         <div class="w-[3vh] h-[3vh] flex items-center justiy-center cursor pointer fullscreenBtn">
+                <img class="opacity-[50%] fullscreenimg" src="/public/icons/full-screen.png" alt="">
             </div>
     </div>
 </div>

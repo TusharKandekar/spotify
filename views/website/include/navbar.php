@@ -1,6 +1,9 @@
 
-<header class="w-full flex items-center justify-center h-[11vh]">
-    <div class="w-full bg-black flex py-[9px] justify-between items-center">
+<header
+  id="navbar"
+  class="fixed top-0 left-0 w-full h-[11vh] flex items-center justify-center
+         transition-transform duration-700 ease-in-out z-50"
+>    <div class="w-full bg-black flex py-[9px] justify-between items-center">
        <div class=" flex gap-7 items-center  px-7">
         <div>
             <img class="w-[2.5vw]" src="https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Primary_Logo_RGB_White.png" alt="">

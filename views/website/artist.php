@@ -9,7 +9,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/views/website/include/header.php";
     include $_SERVER['DOCUMENT_ROOT'] . "/views/website/include/navbar.php";
     ?>
     <div class="w-full flex items-center justify-center gap-2 px-2">
-        <div class="w-[33%] bg-[#121212] h-[80vh]  py-4 px-2 rounded-xl flex flex-col items-center justify-start">
+        <div class="w-[33%] bg-[#121212] h-[76vh] mt-[11vh]  py-4 px-2 rounded-xl flex flex-col items-center justify-start">
             <div class="w-full flex items-center justify-between">
                 <h2 class="font-bold hover:underline text-white">Your Library</h2>
                 <p class="text-white  rounded-full bg-[#1f1f1f] py-2 px-5 font-semibold relative z-10">Create</p>
@@ -28,7 +28,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/views/website/include/header.php";
             <button class="bg-white text-black font-bold py-1 px-10  rounded-full mt-5">Login</button>
 
         </div>
-        <div class="w-[67%] bg-gradient-to-b from-[#222222] to-black h-[80vh] overflow-y-auto overflow-x-hidden rounded-xl flex flex-col items-start justify-start  relative custom-scroll">
+        <div class="w-[67%] bg-gradient-to-b from-[<?= $color ?>] to-[#121212] h-[76vh] mt-[11vh] overflow-y-auto overflow-x-hidden rounded-xl flex flex-col items-start justify-start  relative custom-scroll">
 
             <div class="w-full min-h-[39vh] bg-[url('/public/artist-banner/artist-banner.jpg')]   bg-[position:center_-2rem]   bg-no-repeat" style="background-attachment:fixed; background-size: cover">
                 <div class="w-full h-full bg-gradient-to-t from-black/50 to-transparent flex flex-col items-start justify-center p-4">
@@ -210,6 +210,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/views/website/include/header.php";
             </div>
 
         </div>
+         <?php
+    include $_SERVER['DOCUMENT_ROOT'] . "/views/website/include/play.php";
+    ?>
     </div>
     <?php
     include $_SERVER['DOCUMENT_ROOT'] . "/views/website/include/footer.php";

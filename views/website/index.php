@@ -9,7 +9,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/views/website/include/header.php";
     include $_SERVER['DOCUMENT_ROOT'] . "/views/website/include/navbar.php";
     ?>
     <div class="w-full flex items-center justify-center gap-2 px-2">
-        <div class="w-[33%] bg-[#121212] h-[80vh]  py-4 px-2 rounded-xl flex flex-col items-center justify-start">
+        <div class="w-[33%] bg-[#121212] h-[76vh] mt-[11vh]  py-4 px-2 rounded-xl flex flex-col items-center justify-start">
             <div class="w-full flex items-center justify-between">
                 <h2 class="font-bold hover:underline text-white">Your Library</h2>
                 <p class="text-white  rounded-full bg-[#1f1f1f] py-2 px-5 font-semibold relative z-10">Create</p>
@@ -28,7 +28,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/views/website/include/header.php";
             <button class="bg-white text-black font-bold py-1 px-10  rounded-full mt-5">Login</button>
 
         </div>
-        <div class="w-[67%] bg-gradient-to-b from-[#222222] to-black h-[80vh] overflow-y-auto overflow-x-hidden rounded-xl flex flex-col items-center justify-start p-4 relative custom-scroll">
+        <div class="w-[67%] bg-gradient-to-b from-[#222222] to-black h-[76vh] mt-[11vh] overflow-y-auto overflow-x-hidden rounded-xl flex flex-col items-center justify-start p-4 relative custom-scroll">
             <div class="h-full w-[7vw] absolute right-0 top-0 bg-gradient-to-l from-black/50 z-10 to-transparent rounded-tl-xl rounded-bl-xl"></div>
 
             <div class="w-full flex items-center justify-between px-2">

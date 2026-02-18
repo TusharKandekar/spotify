@@ -230,6 +230,21 @@ class WebController extends LoginController
             require 'views/website/album.php';
         }
     }
+     public function Song()
+    {
+        $color = getDominantColor($_SERVER['DOCUMENT_ROOT'] . '/public/album-banner/asiq.jpg');
+        $image = "/public/album-banner/asiq.jpg";
+        // echo $color; 
+        $siteName = getDBObject()->getSiteName();
+        // printWithPre($starlines);
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+            require 'views/website/include/song.php';
+        } elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            require 'views/website/include/song.php';
+        }
+    }
 
     public function Panel($market = null)
     {
