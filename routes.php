@@ -14,6 +14,7 @@ $route->group(['', 'WebController'], function ($route) {
     $route->route('artist', 'Artist');
         $route->route('album', 'Album');
         $route->route('song', 'Song');
+        $route->route('chat', 'Chat');
 
 
 
