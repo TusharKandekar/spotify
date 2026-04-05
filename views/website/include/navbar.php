@@ -25,12 +25,14 @@
             <a href="/chat">
                 <img src="/public/icons//users.png" class="w-[1.5vw]" alt="">
             </a>
-            <div class="bg-[#2a2a2a] p-2 rounded-full">
+                                        <a href="/login" class="bg-white py-2 px-6 rounded-full font-bold">Login</a>
+
+            <!-- <div class="bg-[#2a2a2a] p-2 rounded-full">
                 <div class=" bg-[#ff6437] text-white font-bold px-3 py-1 rounded-full">
 
                     T
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>

@@ -215,6 +215,21 @@ class WebController extends LoginController
             require 'views/website/artist.php';
         }
     }
+     public function Register()
+    {
+        // $color = getDominantColor($_SERVER['DOCUMENT_ROOT'] . '/public/artist-banner/artist-banner.jpg');
+
+        // echo $color; 
+        $siteName = getDBObject()->getSiteName();
+        // printWithPre($starlines);
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+            require 'views/website/register.php';
+        } elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            require 'views/website/register.php';
+        }
+    }
     public function Album()
     {
         $color = getDominantColor($_SERVER['DOCUMENT_ROOT'] . '/public/album-banner/asiq.jpg');

@@ -8,13 +8,16 @@ $route->group(['', 'LoginController'], function ($route) {
     $route->route('admin', 'index');
     $route->route('logout', 'logout');
 });
-
+$route->group(['', 'ArtistController'], function ($route) {
+    $route->route('/admin/add-artist', 'Artist');
+});
 $route->group(['', 'WebController'], function ($route) {
     $route->route('', 'index');
     $route->route('artist', 'Artist');
         $route->route('album', 'Album');
         $route->route('song', 'Song');
         $route->route('chat', 'Chat');
+        $route->route('register', 'Register');
 
 
 

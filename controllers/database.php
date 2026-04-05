@@ -3,7 +3,7 @@
 class Database
 {
     private $host = "localhost";
-    private $dbname = "dpboss";
+    private $dbname = "spotify";
     private $username = "root";
     private $password = "";
 
@@ -15,9 +15,9 @@ class Database
 
     private $charset = "utf8mb4";
     private $pdo;
-    private $base_url = "https://dpboss.test";
+    private $base_url = "https://spotify.test";
 
-    private $siteName = "dpboss";
+    private $siteName = "spotify";
     // private $software = "https://software.teamrudra.com/";
     // private $softwareid = "4";
     // private $fast2sms_api = "wzVHgpkoYJa6PFCqDevZMGu83l4LhOAtm9NQxXRdK7f0inSTEBkM6hS0CsJvGBHYZWgq4aRQ19cUxuri";
